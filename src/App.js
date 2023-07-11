@@ -1,25 +1,36 @@
-import logo from './logo.svg';
 import './App.css';
+import RenderInput from './RenderInput';
+import GetInput from './GetInput';
+import 'bootstrap/dist/css/bootstrap.css';
+import React from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+export default class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      inputValue: ''
+    }
+  this.handleChange = this.handleChange.bind(this);
+  }
+  handleChange(event) {
+    this.setState({
+      inputValue: event.target.value
+    });
+  }
+  render() {
+    return (
+      <>
+        <h1 className="h1 text-center mt-5 mb-5">Markdown Previewer</h1>
+        <div className="d-flex justify-content-around">
+          <GetInput input={this.state.inputValue} handleChange={this.handleChange}/>
+          <RenderInput input={this.state.inputValue}/>
+        </div>
+      </>
 
-export default App;
+    );
+  }
+};
+
+
+// <GetInput input={this.state.inputValue} handleChange={this.handleChange}/>
+// <RenderInput input={this.state.inputValue}/>
