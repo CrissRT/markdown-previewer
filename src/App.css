@@ -1,15 +1,46 @@
-#editor,
-#preview {
-  width: 45%;
-  height: 50vh;
-  padding: 10px;
-  border: 1px solid #ccc;
+#preview-block,
+#editor-block,
+#editor-text,
+#preview,
+textarea{
+  height: 100%;
+  width: 100%;
 }
 
-textarea{
-  width: 100%;
-  height: 100%;
+#editor-text,
+#preview {
+  padding: 10px;
 }
+
+
+textarea, 
+#preview{
+  background-color: #e0e1dd;
+}
+
+#markdown-block{
+  height: 80%;
+}
+
+#preview-toolbar,
+#editor-toolbar{
+  background-color: #415a77;
+  overflow-x: auto;
+}
+
+@media (max-width: 600px) {
+  /* CSS rules specific to devices with a width less than 600px */
+  #markdown-block {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  #preview-block{
+    margin-top: 10%;
+  }
+}
+
 
 /* Preview component */
 #preview {
@@ -17,3 +48,6 @@ textarea{
 }
 
 /* Editor component */
+#editor-text{
+  padding: 0;
+}
