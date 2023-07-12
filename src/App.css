@@ -2,7 +2,7 @@
 #editor-block,
 #editor-text,
 #preview,
-textarea{
+#editor{
   height: 100%;
   width: 100%;
 }
@@ -13,9 +13,9 @@ textarea{
 }
 
 
-textarea, 
+#editor, 
 #preview{
-  background-color: #e0e1dd;
+  background-color: #c7f9cc;
 }
 
 #markdown-block{
@@ -24,7 +24,7 @@ textarea,
 
 #preview-toolbar,
 #editor-toolbar{
-  background-color: #415a77;
+  background-color: #38a3a5;
   overflow-x: auto;
 }
 
